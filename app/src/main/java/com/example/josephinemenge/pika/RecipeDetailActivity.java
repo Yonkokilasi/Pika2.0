@@ -3,7 +3,7 @@ package com.example.josephinemenge.pika;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.bubbles.myrestaurants.R;
+
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
