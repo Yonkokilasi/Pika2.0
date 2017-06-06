@@ -1,18 +1,20 @@
 package com.example.josephinemenge.pika;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
 /**
  * Created by Josephine Menge on 02/06/2017.
  */
-
+@Parcel
 public class Recipe {
-    private String mName;
-    private String mWebsite;
-    private  String mSource;
-    private  double mYield;
-    private ArrayList<String> mIngredientLines = new ArrayList<>();
-    private  String mImageUrl;
+    public String mName;
+    public String mWebsite;
+    public   String mSource;
+    public   double mYield;
+    public ArrayList<String> mIngredientLines = new ArrayList<>();
+    public   String mImageUrl;
 
     public Recipe(String name, String website,String source, double yield,ArrayList<String>ingredientLines,String imageUrl) {
         this.mName = name;
@@ -21,6 +23,9 @@ public class Recipe {
         this.mIngredientLines = ingredientLines;
         this.mYield = yield;
         this.mWebsite = website;
+    }
+    public Recipe() {
+
     }
     public String getLabel() {
         return mName;

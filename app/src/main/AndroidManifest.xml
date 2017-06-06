@@ -22,6 +22,9 @@
         <activity
             android:name=".ui.RecipeListActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".RecipeDetailActivity"></activity>
+        <activity android:name=".ui.RecipeDetailActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 </manifest>
