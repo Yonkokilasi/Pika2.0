@@ -28,6 +28,8 @@ public class EdmamService {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,fType);
         urlBuilder.addQueryParameter(Constants.INGREDIENT_QUERY_PARAMETER,ingredients);
+        urlBuilder.addQueryParameter("from","0");
+        urlBuilder.addQueryParameter("to","10");
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);
@@ -41,15 +43,15 @@ public class EdmamService {
                 JSONObject edmamJSON = new JSONObject(jsonData);
                 JSONArray hitsJSON = edmamJSON.getJSONArray("hits");
                 for (int i=0;i < hitsJSON.length();i++) {
-                    JSONObject recipeJSON = hitsJSON.getJSONObject(i);
+                    JSONObject recipeJSON = hitsJSON.getJSONObject(i).getJSONObject("recipe");
                     String name = recipeJSON.getString("label");
                     String imageUrl = recipeJSON.getString("image");
                     double yield = recipeJSON.getDouble("yield");
                     String source = recipeJSON.getString("source");
                     ArrayList<String>ingredientLines = new ArrayList<>();
-                    JSONArray ingredientJSON = recipeJSON.getJSONObject("ingredientLines").getJSONArray("ingredientLines");
+                    JSONArray ingredientJSON = recipeJSON.getJSONArray("ingredients");
                     for (int y = 0;y < ingredientJSON.length(); y++) {
-                        ingredientLines.add(ingredientJSON.get(y).toString());
+                        ingredientLines.add(ingredientJSON.getJSONObject(y).getString("text"));
                     }
                     String website = recipeJSON.getString("url");
                     Recipe recipe = new Recipe(name,website,source,yield,ingredientLines,imageUrl);
@@ -64,3 +66,5 @@ public class EdmamService {
         return recipes;
     }
 }
+
+
