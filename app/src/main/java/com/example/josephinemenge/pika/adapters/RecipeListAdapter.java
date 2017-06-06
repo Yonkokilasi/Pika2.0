@@ -57,6 +57,7 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
         @Bind(R.id.recipeSource)TextView mRecipeSourceView;
         @Bind(R.id.yieldTextView) TextView mYieldTextView;
 
+
         private  Context mContext;
 
         public RecipeViewHolder(View itemView) {
@@ -67,8 +68,9 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
         public void bindRecipe(Recipe recipe) {
             Picasso.with(mContext).load(recipe.getImageUrl()).into(mImageView);
             mNameTextView.setText(recipe.getLabel());
-            mYieldTextView.setText("Feeds:"+ recipe.getYield() +" persons");
+            mYieldTextView.setText("Feeds: " + recipe.getYield() +" persons");
             mRecipeSourceView.setText(recipe.getSource());
+
 
 
         }

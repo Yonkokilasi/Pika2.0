@@ -51,34 +51,34 @@
         />
 
 
-        <EditText
-            android:id="@+id/health"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="wrap_content"
-            android:hint="Health type e.g peanut free"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
-        <EditText
-            android:id="@+id/healthLabel"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="wrap_content"
-            android:hint="Enter a label e.g vegetarian"
-            android:textColorHint="#fff"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+        <!--<EditText-->
+            <!--android:id="@+id/health"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:layout_marginLeft="60dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Health type e.g peanut free"-->
+            <!--android:textColorHint="@color/white"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="20sp"-->
+            <!--/>-->
+        <!--<EditText-->
+            <!--android:id="@+id/healthLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:layout_marginLeft="60dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Enter a label e.g vegetarian"-->
+            <!--android:textColorHint="#fff"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="20sp"-->
+            <!--/>-->
 
         <Button
             android:id="@+id/FRecipeButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="120dp"
             android:background="@color/green"
             android:text="Find Recipe"
             android:textColor="@color/white"

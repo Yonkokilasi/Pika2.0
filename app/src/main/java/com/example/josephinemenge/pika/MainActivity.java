@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText mIngredients;
     @Bind(R.id.fType)
     EditText mfType;
-    @Bind(R.id.health)
-    EditText mHealth;
-    @Bind(R.id.healthLabel)
-    EditText mHealthLabel;
+//    @Bind(R.id.health)
+//    EditText mHealth;
+//    @Bind(R.id.healthLabel)
+//    EditText mHealthLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mFRecipeButton) {
             String ingredients = mIngredients.getText().toString();
             String foodType = mfType.getText().toString();
-            String Health = mHealth.getText().toString();
-            String HealthLabel = mHealthLabel.getText().toString();
+//            String Health = mHealth.getText().toString();
+//            String HealthLabel = mHealthLabel.getText().toString();
             Toast.makeText(MainActivity.this, "Finding Recipe", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
             intent.putExtra("ingredients", ingredients);
             intent.putExtra("foodType", foodType);
-            intent.putExtra("Health", Health);
-            intent.putExtra("healthLabel", HealthLabel);
+//            intent.putExtra("Health", Health);
+//            intent.putExtra("healthLabel", HealthLabel);
             startActivity(intent);
         }
     }

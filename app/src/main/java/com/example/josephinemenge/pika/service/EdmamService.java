@@ -29,7 +29,7 @@ public class EdmamService {
         urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,fType);
         urlBuilder.addQueryParameter(Constants.INGREDIENT_QUERY_PARAMETER,ingredients);
         urlBuilder.addQueryParameter("from","0");
-        urlBuilder.addQueryParameter("to","10");
+        urlBuilder.addQueryParameter("to","7");
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);
