@@ -13,7 +13,8 @@ import android.widget.TextView;
 
 import com.example.josephinemenge.pika.R;
 import com.example.josephinemenge.pika.Recipe;
-import com.squareup.picasso.Picasso;
+
+
 
 
 import java.util.ArrayList;
@@ -65,7 +66,6 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
             mContext = itemView.getContext();
         }
         public void bindRecipe(Recipe recipe) {
-            Picasso.with(mContext).load(recipe.getImageUrl()).into(mImageView);
             mNameTextView.setText(recipe.getLabel());
             mYieldTextView.setText("Feeds:"+ recipe.getYield() +"people");
             mRecipeSourceView.setText(recipe.getSource());
@@ -74,3 +74,4 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
         }
     }
 }
+

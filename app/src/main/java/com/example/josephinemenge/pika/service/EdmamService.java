@@ -1,3 +1,4 @@
+
 package com.example.josephinemenge.pika.service;
 
 import com.example.josephinemenge.pika.Constants;
@@ -63,4 +64,3 @@ public class EdmamService {
         return recipes;
     }
 }
-

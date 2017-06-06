@@ -10,6 +10,13 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp">
 
+    <TextView
+        android:layout_width="368dp"
+        android:layout_height="501dp"
+        android:text="Here's What we found :"
+        android:textSize="30sp"
+        android:id="@+id/recipeTextView"
+       />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -19,3 +26,4 @@
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
+

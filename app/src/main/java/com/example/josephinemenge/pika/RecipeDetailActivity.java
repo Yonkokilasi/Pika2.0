@@ -1,3 +1,4 @@
+
 package com.example.josephinemenge.pika;
 
 import android.support.v7.app.AppCompatActivity;
@@ -13,3 +14,4 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
     }
 }
+

@@ -24,5 +24,4 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".RecipeDetailActivity"></activity>
     </application>
-
 </manifest>
