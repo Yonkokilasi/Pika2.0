@@ -1,6 +1,8 @@
 package com.example.josephinemenge.pika;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,7 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class RecipeDetailFragment extends Fragment {
+public class RecipeDetailFragment extends Fragment implements View.OnClickListener{
     @Bind(R.id.recipeImageView) ImageView mImageLabel;
     @Bind(R.id.ingredients)TextView mIngredientsLabel;
     @Bind(R.id.recipeSource)TextView mSourceLabel;
@@ -49,10 +51,18 @@ public class RecipeDetailFragment extends Fragment {
         ButterKnife.bind(this,view);
         Picasso.with(view.getContext()).load(mRecipe.getImageUrl()).into(mImageLabel);
         mNameLabel.setText(mRecipe.getLabel());
-        mSourceLabel.setText(mRecipe.getSource());
-        mYieldLabel.setText(Double.toString(mRecipe.getYield()));
-        mIngredientsLabel.setText(android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
-        mWebsiteLabel.setText(mRecipe.getWebsite());
+        mSourceLabel.setText("Source :"+mRecipe.getSource());
+        mYieldLabel.setText("Serves "+Double.toString(mRecipe.getYield()));
+        mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
+        mWebsiteLabel.setOnClickListener(this);
         return  view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mWebsiteLabel) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mRecipe.getWebsite()));
+            startActivity(webIntent);
+        }
     }
 }

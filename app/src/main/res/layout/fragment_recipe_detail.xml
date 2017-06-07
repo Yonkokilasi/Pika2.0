@@ -70,11 +70,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:drawableLeft="@drawable/ic_link_black_24dp"
+                    android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="View from source"
-                    android:textSize="13sp"
+                    android:text="cook now"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     android:id="@+id/websiteLink"/>
 
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Ingredients"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <Button

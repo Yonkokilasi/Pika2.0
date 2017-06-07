@@ -32,6 +32,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 private ArrayList<Recipe>mRecipes = new ArrayList<>();
     private Context mContext;
 
+
     public RecipeListAdapter(Context context,ArrayList<Recipe> recipes) {
         mContext = context;
         mRecipes = recipes;
