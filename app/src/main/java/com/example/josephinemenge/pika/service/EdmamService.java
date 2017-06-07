@@ -46,7 +46,7 @@ public class EdmamService {
                     JSONObject recipeJSON = hitsJSON.getJSONObject(i).getJSONObject("recipe");
                     String name = recipeJSON.getString("label");
                     String imageUrl = recipeJSON.getString("image");
-                    double yield = recipeJSON.getDouble("yield");
+                    int yield = recipeJSON.getInt("yield");
                     String source = recipeJSON.getString("source");
                     ArrayList<String>ingredientLines = new ArrayList<>();
                     JSONArray ingredientJSON = recipeJSON.getJSONArray("ingredients");

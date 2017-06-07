@@ -1,6 +1,8 @@
 package com.example.josephinemenge.pika.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 
+import com.example.josephinemenge.pika.Constants;
 import com.example.josephinemenge.pika.R;
 import com.example.josephinemenge.pika.Recipe;
 import com.example.josephinemenge.pika.adapters.RecipeListAdapter;
@@ -28,6 +31,8 @@ public class RecipeListActivity extends AppCompatActivity {
     private RecipeListAdapter mAdapter;
     public static final String TAG = RecipeListActivity.class.getSimpleName();
     public ArrayList<Recipe> mRecipes = new ArrayList<>();
+    private String mRecentSearch;
+    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,11 @@ public class RecipeListActivity extends AppCompatActivity {
         String foodType = intent.getStringExtra("foodType");
         String ingredients = intent.getStringExtra("ingredients");
         getRecipes(foodType,ingredients);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
+        if (mRecentSearch != null) {
+            getRecipes(mRecentSearch,ingredients);
+        }
     }
     private void getRecipes(String foodType, String ingredients) {
         final EdmamService edmamService = new EdmamService();
@@ -45,7 +55,7 @@ public class RecipeListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
-                Log.e("Results Activity", "Failed to mke api call");
+                Log.e("Results Activity", "Failed to make api call");
             }
 
             @Override

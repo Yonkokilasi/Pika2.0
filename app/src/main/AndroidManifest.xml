@@ -21,7 +21,10 @@
         </activity>
         <activity
             android:name=".ui.RecipeListActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.josephinemenge.pika.MainActivity"/>
+        </activity>
         <activity android:name=".ui.RecipeDetailActivity"
             android:theme="@style/AppTheme">
 

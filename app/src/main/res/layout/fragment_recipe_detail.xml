@@ -56,15 +56,25 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
-                android:paddingTop="0dp">
+                android:paddingTop="0dp"
+                android:background="@color/white">
+                <Button
+                    android:id="@+id/saveRecipeButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/orange"
+                    android:text="Keep Recipe"
+                    android:layout_marginLeft="200dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -87,13 +97,7 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/saveRecipeButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="170dp"
-                android:background="@color/orange"
-                android:text="Keep Recipe" />
+
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

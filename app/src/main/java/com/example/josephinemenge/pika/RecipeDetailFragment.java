@@ -52,7 +52,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         Picasso.with(view.getContext()).load(mRecipe.getImageUrl()).into(mImageLabel);
         mNameLabel.setText(mRecipe.getLabel());
         mSourceLabel.setText("Source :"+mRecipe.getSource());
-        mYieldLabel.setText("Serves "+Double.toString(mRecipe.getYield()));
+        mYieldLabel.setText("Serves "+(mRecipe.getYield()));
         mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
         mWebsiteLabel.setOnClickListener(this);
         return  view;

@@ -2,6 +2,9 @@
 package com.example.josephinemenge.pika;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +19,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
     @Bind(R.id.FRecipeButton)
     Button mFRecipeButton;
     @Bind(R.id.ingredients)
@@ -34,13 +39,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
         mFRecipeButton.setOnClickListener(this);
         Log.d("Find recipe clicked", "Main activity");
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
     }
 
     @Override
     public void onClick(View v) {
         if (v == mFRecipeButton) {
             String ingredients = mIngredients.getText().toString();
-            String foodType = mfType.getText().toString();
+            String foodType = mfType.getText().toString();addToSharedPreferences(foodType);
+            if (!(foodType).equals("")){
+                addToSharedPreferences(foodType);
+            }
 //            String Health = mHealth.getText().toString();
 //            String HealthLabel = mHealthLabel.getText().toString();
             Toast.makeText(MainActivity.this, "Finding Recipe", Toast.LENGTH_SHORT).show();
@@ -51,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            intent.putExtra("healthLabel", HealthLabel);
             startActivity(intent);
         }
+    }
+    private void addToSharedPreferences(String foodType) {
+        mEditor.putString(Constants.PREFERENCES_FOOD_TYPE,foodType).apply();
     }
 }
 

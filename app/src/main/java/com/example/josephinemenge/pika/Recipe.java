@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class Recipe {
     public String mName;
     public String mWebsite;
-    public   String mSource;
-    public   double mYield;
+    public  String mSource;
+    public  int mYield;
     public ArrayList<String> mIngredientLines = new ArrayList<>();
     public   String mImageUrl;
 
-    public Recipe(String name, String website,String source, double yield,ArrayList<String>ingredientLines,String imageUrl) {
+    public Recipe(String name, String website,String source, int yield,ArrayList<String>ingredientLines,String imageUrl) {
         this.mName = name;
         this.mImageUrl = imageUrl;
         this.mSource = source;
@@ -33,7 +33,7 @@ public class Recipe {
     public String getSource() {
         return mSource;
     }
-    public  double getYield() {
+    public  int getYield() {
         return mYield;
     }
     public String getWebsite() {

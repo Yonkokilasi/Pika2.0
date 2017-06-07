@@ -10,4 +10,5 @@ public class Constants {
     public static final String BASE_URL = "https://api.edamam.com/search?recipe";
     public static final String  QUERY_PARAMETER = "q";
     public static final String INGREDIENT_QUERY_PARAMETER = "Ingredient";
+    public static final String PREFERENCES_FOOD_TYPE = "foodType";
 }
