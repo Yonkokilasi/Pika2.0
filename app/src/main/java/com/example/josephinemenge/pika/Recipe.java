@@ -3,47 +3,48 @@ package com.example.josephinemenge.pika;
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Josephine Menge on 02/06/2017.
  */
 @Parcel
 public class Recipe {
-    public String mName;
-    public String mWebsite;
-    public  String mSource;
-    public  int mYield;
-    public ArrayList<String> mIngredientLines = new ArrayList<>();
-    public   String mImageUrl;
+     String name;
+    String website;
+     String source;
+      int yield;
+    List<String> ingredientLines = new ArrayList<>();
+       String imageUrl;
 
-    public Recipe(String name, String website,String source, int yield,ArrayList<String>ingredientLines,String imageUrl) {
-        this.mName = name;
-        this.mImageUrl = imageUrl;
-        this.mSource = source;
-        this.mIngredientLines = ingredientLines;
-        this.mYield = yield;
-        this.mWebsite = website;
+    public Recipe(String name, String website,String source, int yield,List<String>ingredientLines,String imageUrl) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.source = source;
+        this.ingredientLines = ingredientLines;
+        this.yield = yield;
+        this.website = website;
     }
     public Recipe() {
 
     }
     public String getLabel() {
-        return mName;
+        return name;
     }
     public String getSource() {
-        return mSource;
+        return source;
     }
     public  int getYield() {
-        return mYield;
+        return yield;
     }
     public String getWebsite() {
-        return mWebsite;
+        return website;
     }
-    public ArrayList<String> getIngredientLines() {
-        return mIngredientLines;
+    public List<String> getIngredientLines() {
+        return ingredientLines;
     }
     public String getImageUrl() {
-        return mImageUrl;
+        return imageUrl;
     }
 
 

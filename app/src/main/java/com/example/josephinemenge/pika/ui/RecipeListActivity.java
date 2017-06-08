@@ -31,8 +31,8 @@ public class RecipeListActivity extends AppCompatActivity {
     private RecipeListAdapter mAdapter;
     public static final String TAG = RecipeListActivity.class.getSimpleName();
     public ArrayList<Recipe> mRecipes = new ArrayList<>();
-    private String mRecentSearch;
-    private SharedPreferences mSharedPreferences;
+//    private String mRecentSearch;
+//    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +41,13 @@ public class RecipeListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Intent intent = getIntent();
         String foodType = intent.getStringExtra("foodType");
-        String ingredients = intent.getStringExtra("ingredients");
-        getRecipes(foodType,ingredients);
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
-        if (mRecentSearch != null) {
-            getRecipes(mRecentSearch,ingredients);
-        }
+        String health = intent.getStringExtra("health");
+        getRecipes(foodType,health);
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
+//        if (mRecentSearch != null) {
+//            getRecipes(mRecentSearch,ingredients);
+//        }
     }
     private void getRecipes(String foodType, String ingredients) {
         final EdmamService edmamService = new EdmamService();
