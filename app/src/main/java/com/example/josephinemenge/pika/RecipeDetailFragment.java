@@ -51,8 +51,8 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         ButterKnife.bind(this,view);
         Picasso.with(view.getContext()).load(mRecipe.getImageUrl()).into(mImageLabel);
         mNameLabel.setText(mRecipe.getLabel());
-        mSourceLabel.setText("Source :"+mRecipe.getSource());
-        mYieldLabel.setText("Serves "+(mRecipe.getYield()));
+        mSourceLabel.setText("Sourced from : " + mRecipe.getSource());
+        mYieldLabel.setText("Yield "+(mRecipe.getYield()));
         mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
         mWebsiteLabel.setOnClickListener(this);
         return  view;

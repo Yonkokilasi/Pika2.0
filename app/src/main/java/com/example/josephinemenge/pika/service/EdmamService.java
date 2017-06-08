@@ -23,13 +23,13 @@ import okhttp3.Response;
  */
 
 public class EdmamService {
-    public static void findRecipes(String fType ,String ingredients,Callback callback) {
+    public static void findRecipes(String fType ,String health,Callback callback) {
        OkHttpClient client = new OkHttpClient.Builder().build();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,fType);
-        urlBuilder.addQueryParameter(Constants.INGREDIENT_QUERY_PARAMETER,ingredients);
+        urlBuilder.addQueryParameter(Constants.HEALTH_QUERY_PARAMETER,health);
         urlBuilder.addQueryParameter("from","0");
-        urlBuilder.addQueryParameter("to","15");
+        urlBuilder.addQueryParameter("to","30");
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);

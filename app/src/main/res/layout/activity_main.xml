@@ -30,49 +30,28 @@
         <EditText
             android:id="@+id/fType"
             android:layout_width="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:hint="Enter a Food type e.g chicken"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             />
+
+
         <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-            android:layout_marginTop="30dp"
-        android:hint="Enter an ingredient e.g eggs"
-        android:id="@+id/ingredients"
+            android:id="@+id/health"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:hint="Health Label e.g peanut free"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:textSize="20sp"
-        />
+            android:textSize="25sp"
+            />
 
-
-        <!--<EditText-->
-            <!--android:id="@+id/health"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:layout_marginLeft="60dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Health type e.g peanut free"-->
-            <!--android:textColorHint="@color/white"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="20sp"-->
-            <!--/>-->
-        <!--<EditText-->
-            <!--android:id="@+id/healthLabel"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:layout_marginLeft="60dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Enter a label e.g vegetarian"-->
-            <!--android:textColorHint="#fff"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="20sp"-->
-            <!--/>-->
 
         <Button
             android:id="@+id/FRecipeButton"
