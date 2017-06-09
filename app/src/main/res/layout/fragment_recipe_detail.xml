@@ -83,7 +83,7 @@
                     android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="cook now"
+                    android:text="Click to view method"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:id="@+id/websiteLink"/>

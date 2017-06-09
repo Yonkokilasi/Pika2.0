@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.josephinemenge.pika">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,14 +21,15 @@
         </activity>
         <activity
             android:name=".ui.RecipeListActivity"
-            android:theme="@style/AppTheme"
-            >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.josephinemenge.pika.MainActivity"/>
-        </activity>
-        <activity android:name=".ui.RecipeDetailActivity"
             android:theme="@style/AppTheme">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.josephinemenge.pika.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.RecipeDetailActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".SavedRecipeListActivity"></activity>
     </application>
+
 </manifest>
