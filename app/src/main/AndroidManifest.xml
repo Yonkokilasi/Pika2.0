@@ -28,8 +28,9 @@
         </activity>
         <activity
             android:name=".ui.RecipeDetailActivity"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".SavedRecipeListActivity"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".SavedRecipeListActivity" />
+        <activity android:name=".CreateAccountActivity"></activity>
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText mfType;
     @Bind(R.id.health)
     EditText mHealth;
+    @Bind(R.id.saveRecipeButton) Button mSaveRecipeButton;
 
 
     @Override
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .child(Constants.FIREBASE_CHILD_SEARCHED_RECIPE);
         mSearchedHealthReference = FirebaseDatabase.getInstance().getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_HEALTH);
+        mSaveRecipeButton.setOnClickListener(this);
         mSearchedRecipeReferenceListener = mSearchedRecipeReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -88,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("Health", Health);
             saveRecipeToFireBase(foodType);
             saveHealthToFireBase(health);
+            startActivity(intent);
+        }
+        if (v == mSaveRecipeButton ) {
+            Intent intent = new Intent(MainActivity.this, SavedRecipeListActivity.class);
             startActivity(intent);
         }
     }
