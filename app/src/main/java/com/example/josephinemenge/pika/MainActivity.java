@@ -2,9 +2,6 @@
 package com.example.josephinemenge.pika;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.josephinemenge.pika.ui.RecipeListActivity;
+import com.example.josephinemenge.pika.ui.SavedRecipeListActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText mfType;
     @Bind(R.id.health)
     EditText mHealth;
-    @Bind(R.id.saveRecipeButton) Button mSaveRecipeButton;
+    @Bind(R.id.SavedRecipes) Button mSavedRecipeButton;
 
 
     @Override
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .child(Constants.FIREBASE_CHILD_SEARCHED_RECIPE);
         mSearchedHealthReference = FirebaseDatabase.getInstance().getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_HEALTH);
-        mSaveRecipeButton.setOnClickListener(this);
+        mSavedRecipeButton.setOnClickListener(this);
         mSearchedRecipeReferenceListener = mSearchedRecipeReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-            Log.v("FAILEDtolisten for onchange acitivty","MainActivity");
+            Log.v("FAILEDtolistenforonchange acitivty","MainActivity");
             }
         });
     }
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             saveHealthToFireBase(health);
             startActivity(intent);
         }
-        if (v == mSaveRecipeButton ) {
+        if (v == mSavedRecipeButton ) {
             Intent intent = new Intent(MainActivity.this, SavedRecipeListActivity.class);
             startActivity(intent);
         }

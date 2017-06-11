@@ -36,7 +36,7 @@
             android:hint="Enter a Food type e.g chicken"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="20sp"
             />
 
 
@@ -49,7 +49,7 @@
             android:hint="Health Label e.g peanut free"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="20sp"
             />
 
         <LinearLayout

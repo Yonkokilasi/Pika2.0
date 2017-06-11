@@ -39,7 +39,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
         TextView nameTextView = (TextView) mView.findViewById(R.id.recipeNameTextView);
         TextView sourceTextView = (TextView) mView.findViewById(R.id.recipeSource);
         TextView yieldTextView = (TextView) mView.findViewById(R.id.yieldTextView);
-        Picasso.with(mContext).load(recipe.getImageUrl()).centerCrop().into(recipeImageView);
+        Picasso.with(mContext).load(recipe.getImageUrl()).into(recipeImageView);
 
     }
 

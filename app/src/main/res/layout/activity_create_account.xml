@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.josephinemenge.pika.CreateAccountActivity"
+    tools:context="com.example.josephinemenge.pika.ui.CreateAccountActivity"
     android:background="@color/green">
 
     <LinearLayout
@@ -26,7 +26,6 @@
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
             android:textSize="20sp"/>
         <EditText
             android:layout_width="match_parent"
@@ -34,19 +33,21 @@
             android:background="@color/white"
             android:textColor="@color/black"
             android:hint="Email"
-            android:textColorHint="@color/black"
             android:nextFocusDown="@id/passwordEditText"
             android:padding="10dp"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:id="@+id/emailEditText"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:hint="password"
+            android:hint="Password"
+            android:padding="10dp"
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEditText"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:id="@+id/passwordEditText"/>
         <EditText
             android:id="@+id/confirmPasswordEditText"
             android:layout_width="match_parent"
@@ -58,7 +59,6 @@
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
-            android:textColorHint="@color/black"
             android:textSize="20sp" />
         <Button
             android:layout_width="match_parent"
@@ -86,6 +86,7 @@
             android:textSize="30dp"
             android:textStyle="bold"
             android:layout_above="@+id/linearLayout"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:id="@+id/createAccount"/>
 
 </RelativeLayout>

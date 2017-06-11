@@ -3,11 +3,16 @@ package com.example.josephinemenge.pika.ui;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 
 import com.example.josephinemenge.pika.Constants;
@@ -31,8 +36,9 @@ public class RecipeListActivity extends AppCompatActivity {
     private RecipeListAdapter mAdapter;
     public static final String TAG = RecipeListActivity.class.getSimpleName();
     public ArrayList<Recipe> mRecipes = new ArrayList<>();
-//    private String mRecentSearch;
-//    private SharedPreferences mSharedPreferences;
+    private String mRecentSearch;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +49,16 @@ public class RecipeListActivity extends AppCompatActivity {
         String foodType = intent.getStringExtra("foodType");
         String health = intent.getStringExtra("health");
         getRecipes(foodType,health);
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
-//        if (mRecentSearch != null) {
-//            getRecipes(mRecentSearch,ingredients);
-//        }
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
+        if (mRecentSearch != null) {
+            getRecipes(mRecentSearch,health);
+        }
     }
-    private void getRecipes(String foodType, String ingredients) {
+
+    private void getRecipes(String foodType, String health) {
         final EdmamService edmamService = new EdmamService();
-        edmamService.findRecipes(foodType, ingredients, new Callback() {
+        edmamService.findRecipes(foodType, health, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -73,6 +80,9 @@ public class RecipeListActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+    private void  addToSharedPreferences(String foodType) {
+        mEditor.putString(Constants.PREFERENCES_FOOD_TYPE,foodType).apply();
     }
 
 }

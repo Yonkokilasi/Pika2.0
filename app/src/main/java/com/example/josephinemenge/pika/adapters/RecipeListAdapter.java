@@ -75,6 +75,7 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
             mNameTextView.setText(recipe.getLabel());
             mYieldTextView.setText("Feeds: " + recipe.getYield() +" people");
             mRecipeSourceView.setText(recipe.getSource());
+
         }
 
         @Override
