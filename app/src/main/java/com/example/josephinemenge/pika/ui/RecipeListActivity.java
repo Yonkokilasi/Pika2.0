@@ -58,7 +58,7 @@ public class RecipeListActivity extends AppCompatActivity {
 
     private void getRecipes(String foodType, String health) {
         final EdmamService edmamService = new EdmamService();
-        edmamService.findRecipes(foodType, health, new Callback() {
+        EdmamService.findRecipes(foodType, health, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();

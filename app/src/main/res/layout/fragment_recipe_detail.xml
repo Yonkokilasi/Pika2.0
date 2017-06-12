@@ -5,51 +5,55 @@
     tools:context="com.example.josephinemenge.pika.RecipeDetailFragment"
     android:background="@color/white">
 
-  
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <ImageView
+            android:id="@+id/recipeImageView"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:src="@drawable/f1"
             android:scaleType="centerCrop"
-            android:id="@+id/recipeImageView"/>
+            android:src="@drawable/f1" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
-            android:paddingBottom="20dp">
+            android:paddingTop="20dp">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/recipeNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:text="Recipe Name"
-                android:textSize="15sp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/recipeSource"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brunch"
-                android:id="@+id/recipeSource"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
-                android:textStyle="italic"
-                android:layout_marginTop="40dp"
-                />
+                android:layout_marginTop="35dp"
+                android:text="Brunch"
+                android:textStyle="italic" />
+
             <TextView
+                android:id="@+id/yieldText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yield"
-                android:id="@+id/yieldText"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="30dp"
+                android:text="Yield" />
 
         </RelativeLayout>
 
@@ -63,21 +67,23 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingLeft="10dp"
-                android:paddingTop="0dp"
-                android:background="@color/white">
+                android:paddingTop="0dp">
+
                 <Button
                     android:id="@+id/saveRecipeButton"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
                     android:layout_marginTop="0dp"
                     android:background="@color/orange"
-                    android:text="Keep Recipe"
                     android:drawableTop="@drawable/ic_save"
-                    android:layout_marginLeft="200dp"/>
+                    android:text="Keep Recipe" />
 
                 <TextView
+                    android:id="@+id/websiteLink"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
@@ -85,9 +91,8 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="Click to view method"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:id="@+id/websiteLink"/>
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/ingredients"
@@ -95,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Ingredients"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
 

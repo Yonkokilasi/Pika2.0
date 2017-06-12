@@ -56,8 +56,9 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         mNameLabel.setText(mRecipe.getLabel());
         mSourceLabel.setText("Sourced from : " + mRecipe.getSource());
         mYieldLabel.setText("Yield "+(mRecipe.getYield()));
-//        mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
+        mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
         mSaveRecipeButton.setOnClickListener(this);
+        mWebsiteLabel.setOnClickListener(this);
         return  view;
     }
 

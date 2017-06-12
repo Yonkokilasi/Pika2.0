@@ -19,19 +19,19 @@
             android:id="@+id/textView"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:layout_marginLeft="15sp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="0sp"
             android:layout_marginTop="0dp"
-            android:text="PIKA "
+            android:text="Begin your Search"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="75sp" />
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/fType"
             android:layout_width="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:hint="Enter a Food type e.g chicken"
             android:textColorHint="@color/white"
@@ -44,7 +44,7 @@
             android:id="@+id/health"
             android:layout_width="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:hint="Health Label e.g peanut free"
             android:textColorHint="@color/white"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="100dp">
             <Button
                 android:id="@+id/FRecipeButton"
                 android:layout_width="wrap_content"

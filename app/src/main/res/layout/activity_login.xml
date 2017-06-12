@@ -27,7 +27,8 @@
             android:layout_marginBottom="5dp"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +37,8 @@
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEditText"
             android:textSize="20sp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:id="@+id/passwordEditText"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,10 +67,10 @@
         android:textStyle="italic"
         android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        android:text="Let's get your Pika on"
+        android:text="PIKA "
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        android:textSize="35sp"/>
+        android:textSize="75sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

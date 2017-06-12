@@ -36,7 +36,8 @@
             android:nextFocusDown="@id/passwordEditText"
             android:padding="10dp"
             android:textSize="20sp"
-            android:id="@+id/emailEditText"/>
+            android:id="@+id/emailEditText"
+            android:inputType="textEmailAddress"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +56,6 @@
             android:background="@android:color/white"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
