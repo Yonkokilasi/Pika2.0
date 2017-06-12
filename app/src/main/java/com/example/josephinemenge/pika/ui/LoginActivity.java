@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mAuthProgressDialog.dismiss();
                 if (!task.isSuccessful()) {
                     Log.w(TAG, "signInWithEmail",task.getException());
-                    Toast.makeText(LoginActivity.this,"Authentication failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Authentication failed wrong password and email combination",Toast.LENGTH_LONG).show();
                 }
             }
         });
