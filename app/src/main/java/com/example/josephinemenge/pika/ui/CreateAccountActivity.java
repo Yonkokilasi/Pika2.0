@@ -67,11 +67,36 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 if (user != null) {
                     Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    sendVerificationEmail();
                     startActivity(intent);
                     finish();
                 }
             }
         };
+    }
+    private void sendVerificationEmail()
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            // email sent
+                        }
+                        else
+                        {
+                            Toast.makeText(CreateAccountActivity.this,"Failed to create account",Toast.LENGTH_SHORT);
+                            // email not sent, so display message and restart the activity or do whatever you wish to do
+                            //restart this activity
+                            overridePendingTransition(0, 0);
+                            finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(getIntent());
+                        }
+                    }
+                });
     }
 
     public void createNewUser() {
