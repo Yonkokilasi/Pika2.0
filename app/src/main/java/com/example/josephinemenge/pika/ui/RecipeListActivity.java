@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import com.example.josephinemenge.pika.Constants;
@@ -56,13 +57,14 @@ public class RecipeListActivity extends AppCompatActivity {
         }
     }
 
-    private void getRecipes(String foodType, String health) {
+    private void getRecipes(final String foodType, String health) {
         final EdmamService edmamService = new EdmamService();
         EdmamService.findRecipes(foodType, health, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
                 Log.e("Results Activity", "Failed to make api call");
+
             }
 
             @Override
@@ -71,13 +73,18 @@ public class RecipeListActivity extends AppCompatActivity {
                 RecipeListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        if (mRecipes.isEmpty()) {
+                            Toast.makeText(RecipeListActivity.this,"No results found for "+ foodType +" try another food type",Toast.LENGTH_LONG).show();
+                        } else {
                         mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RecipeListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
+                        }
                     }
                 });
+
             }
         });
     }
