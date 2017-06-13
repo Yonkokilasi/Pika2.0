@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.josephinemenge.pika.ui.CreateAccountActivity"
-    android:background="@color/green">
+    android:background="@color/greenDark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,18 +15,31 @@
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/createAccount"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nameEditText"
             android:background="@color/white"
-            android:hint="username"
+            android:hint="Username"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,18 +50,21 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:id="@+id/emailEditText"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp"/>
+
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:background="@color/white"
             android:hint="Password"
-            android:padding="10dp"
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEditText"
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"
-            android:id="@+id/passwordEditText"/>
+            android:padding="10dp"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/confirmPasswordEditText"
             android:layout_width="match_parent"
@@ -57,7 +73,6 @@
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
         <Button
@@ -65,28 +80,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/createUserButton"
             android:padding="10dp"
-            android:text="Sign Up"
+            android:text="Sign Me Up"
             android:background="@color/white"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:id="@+id/loginTextView"
-            android:text="Already have an account? Log in here!"/>
-    </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Account"
+            android:layout_marginTop="13dp"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:backgroundTint="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_above="@+id/linearLayout"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/createAccount"/>
+            android:textSize="18sp"
+            android:id="@+id/loginTextView"
+            android:textColor="@color/white"
+            android:text="Already have an account? Log in here!"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -39,11 +39,12 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
         TextView nameTextView = (TextView) mView.findViewById(R.id.recipeNameTextView);
         TextView sourceTextView = (TextView) mView.findViewById(R.id.recipeSource);
         TextView yieldTextView = (TextView) mView.findViewById(R.id.yieldTextView);
+
+
         Picasso.with(mContext).load(recipe.getImageUrl()).into(recipeImageView);
         nameTextView.setText(recipe.getLabel());
         sourceTextView.setText(recipe.getSource());
-        yieldTextView.setText(recipe.getYield());
-
+        yieldTextView.setText("Feeds " + (recipe.getYield()) +" persons");
     }
 
     @Override
@@ -65,7 +66,6 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
 

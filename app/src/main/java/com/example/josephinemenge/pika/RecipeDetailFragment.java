@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -69,9 +71,16 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
             startActivity(webIntent);
         }
         if (v == mSaveRecipeButton) {
-            DatabaseReference recipeReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPES);
-            recipeReference.push().setValue(mRecipe);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference recipeReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RECIPES).child(uid);
+            DatabaseReference pushRef = recipeReference.push();
+            String pushId = pushRef.getKey();
+            mRecipe.setPushId(pushId);
+            pushRef.setValue(mRecipe);
             Toast.makeText(getContext(),"Saved",Toast.LENGTH_SHORT).show();
+
+
         }
     }
 }

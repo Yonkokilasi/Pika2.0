@@ -90,8 +90,8 @@
                     android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="Click to view method"
-                    android:textSize="15sp"
+                    android:text="Click to view cooking method"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView

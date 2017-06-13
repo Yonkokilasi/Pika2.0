@@ -16,6 +16,7 @@ public class Recipe {
       int yield;
     List<String> ingredientLines = new ArrayList<>();
        String imageUrl;
+    private String pushId;
 
     public Recipe(String name, String website,String source, int yield,List<String>ingredientLines,String imageUrl) {
         this.name = name;
@@ -45,6 +46,12 @@ public class Recipe {
     }
     public String getImageUrl() {
         return imageUrl;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 
