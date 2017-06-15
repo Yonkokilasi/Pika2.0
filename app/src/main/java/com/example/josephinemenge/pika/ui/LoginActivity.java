@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void creaAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Finding your account..");
-        mAuthProgressDialog.setMessage("Just a moment or two maybe even three..");
+        mAuthProgressDialog.setMessage("Chill Kiasi...");
         mAuthProgressDialog.setCancelable(false);
     }
     private void loginWithPassword() {

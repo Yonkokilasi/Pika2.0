@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="30dp"
                 android:text="Brunch"
                 android:textStyle="italic" />
 
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:text="Yield" />
 
         </RelativeLayout>
@@ -69,18 +69,20 @@
                 android:layout_alignParentTop="true"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:paddingLeft="10dp"
+                android:paddingLeft="20dp"
                 android:paddingTop="0dp">
 
-                <Button
-                    android:id="@+id/saveRecipeButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="200dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@color/orange"
-                    android:drawableTop="@drawable/ic_save"
-                    android:text="Keep Recipe" />
+
+               <Button
+                   android:layout_width="100dp"
+                   android:layout_height="50dp"
+                   android:background="@color/green"
+                   android:id="@+id/saveRecipeButton"
+                   android:padding="0dp"
+                   android:text="Save this recipe"
+                   android:textColor="@color/white"
+                   android:drawableBottom="@drawable/ic_save"
+                   />
 
                 <TextView
                     android:id="@+id/websiteLink"
@@ -90,17 +92,20 @@
                     android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="Click to view cooking method"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="Click to view cooking instructions"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="0dp"/>
 
                 <TextView
                     android:id="@+id/ingredients"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Ingredients"
-                    android:textSize="12sp" />
+                    android:textSize="15sp"
+                    android:padding="5dp"/>
             </LinearLayout>
 
 

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,7 +59,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         mNameLabel.setText(mRecipe.getLabel());
         mSourceLabel.setText("Sourced from : " + mRecipe.getSource());
         mYieldLabel.setText("Yield "+(mRecipe.getYield()));
-        mIngredientsLabel.setText("Requires "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
+        mIngredientsLabel.setText("Ingredients Required are "+android.text.TextUtils.join(",", mRecipe.getIngredientLines()));
         mSaveRecipeButton.setOnClickListener(this);
         mWebsiteLabel.setOnClickListener(this);
         return  view;

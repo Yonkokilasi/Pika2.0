@@ -182,7 +182,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(CreateAccountActivity.this, "Hello " + user.getDisplayName(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(CreateAccountActivity.this, "Greetings " + user.getDisplayName(),Toast.LENGTH_LONG).show();
                 }
             }
         });

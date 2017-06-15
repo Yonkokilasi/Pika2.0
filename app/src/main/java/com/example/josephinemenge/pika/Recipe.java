@@ -17,7 +17,7 @@ public class Recipe {
     List<String> ingredientLines = new ArrayList<>();
        String imageUrl;
     private String pushId;
-
+    String index;
     public Recipe(String name, String website,String source, int yield,List<String>ingredientLines,String imageUrl) {
         this.name = name;
         this.imageUrl = imageUrl;
@@ -25,6 +25,7 @@ public class Recipe {
         this.ingredientLines = ingredientLines;
         this.yield = yield;
         this.website = website;
+        this.index = "not_specified";
     }
     public Recipe() {
 
@@ -41,6 +42,9 @@ public class Recipe {
     public String getWebsite() {
         return website;
     }
+    public String getIndex() {
+        return index;
+    }
     public List<String> getIngredientLines() {
         return ingredientLines;
     }
@@ -53,6 +57,8 @@ public class Recipe {
     public void setPushId(String pushId) {
         this.pushId = pushId;
     }
-
+    public void setIndex(String index) {
+        this.index = index;
+    }
 
 }

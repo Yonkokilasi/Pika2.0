@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/emailEditText"
-            android:background="@color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@id/passwordEditText"
@@ -33,7 +32,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:hint="Password"
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEditText"

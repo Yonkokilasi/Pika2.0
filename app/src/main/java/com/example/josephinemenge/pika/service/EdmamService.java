@@ -1,6 +1,9 @@
 
 package com.example.josephinemenge.pika.service;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.josephinemenge.pika.Constants;
 import com.example.josephinemenge.pika.Recipe;
 
@@ -42,20 +45,25 @@ public class EdmamService {
             if (response.isSuccessful()) {
                 JSONObject edmamJSON = new JSONObject(jsonData);
                 JSONArray hitsJSON = edmamJSON.getJSONArray("hits");
-                for (int i=0;i < hitsJSON.length();i++) {
-                    JSONObject recipeJSON = hitsJSON.getJSONObject(i).getJSONObject("recipe");
-                    String name = recipeJSON.getString("label");
-                    String imageUrl = recipeJSON.getString("image");
-                    int yield = recipeJSON.getInt("yield");
-                    String source = recipeJSON.getString("source");
-                    ArrayList<String>ingredientLines = new ArrayList<>();
-                    JSONArray ingredientJSON = recipeJSON.getJSONArray("ingredients");
-                    for (int y = 0;y < ingredientJSON.length(); y++) {
-                        ingredientLines.add(ingredientJSON.getJSONObject(y).getString("text"));
+
+                if (hitsJSON.length() == 0) {
+                Log.d("Service","No results found");
+                } else {
+                    for (int i = 0; i < hitsJSON.length(); i++) {
+                        JSONObject recipeJSON = hitsJSON.getJSONObject(i).getJSONObject("recipe");
+                        String name = recipeJSON.getString("label");
+                        String imageUrl = recipeJSON.getString("image");
+                        int yield = recipeJSON.getInt("yield");
+                        String source = recipeJSON.getString("source");
+                        ArrayList<String> ingredientLines = new ArrayList<>();
+                        JSONArray ingredientJSON = recipeJSON.getJSONArray("ingredients");
+                        for (int y = 0; y < ingredientJSON.length(); y++) {
+                            ingredientLines.add(ingredientJSON.getJSONObject(y).getString("text"));
+                        }
+                        String website = recipeJSON.getString("url");
+                        Recipe recipe = new Recipe(name, website, source, yield, ingredientLines, imageUrl);
+                        recipes.add(recipe);
                     }
-                    String website = recipeJSON.getString("url");
-                    Recipe recipe = new Recipe(name,website,source,yield,ingredientLines,imageUrl);
-                    recipes.add(recipe);
                 }
             }
         } catch (IOException e) {

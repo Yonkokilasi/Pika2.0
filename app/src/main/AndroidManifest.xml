@@ -28,12 +28,17 @@
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.josephinemenge.pika.MainActivity" />
-
         </activity>
+
 
         <activity
             android:name=".ui.RecipeDetailActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+        <meta-data
+            android:value="com.example.josephinemenge.pika.MainActivity"
+            android:name="android.support.PARENT_ACTIVITY"/>
+        </activity>
+
 
         <activity
             android:name=".ui.SavedRecipeListActivity"
@@ -42,6 +47,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.josephinemenge.pika.MainActivity" />
         </activity>
+
 
         <activity android:name=".ui.CreateAccountActivity"
             android:theme="@style/NoActionBar"/>
@@ -53,7 +59,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
     </application>
