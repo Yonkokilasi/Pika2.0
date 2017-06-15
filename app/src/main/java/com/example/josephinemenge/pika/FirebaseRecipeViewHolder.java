@@ -3,11 +3,13 @@ package com.example.josephinemenge.pika;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.josephinemenge.pika.ui.RecipeDetailActivity;
+import com.example.josephinemenge.pika.util.ItemTouchHelperViewHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +28,7 @@ import static com.example.josephinemenge.pika.R.id.recipeImageView;
  * Created by Josephine Menge on 08/06/2017.
  */
 
-public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder {
+public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder{
     View mView;
     Context mContext;
     public ImageView mRecipeImageView;
@@ -47,6 +49,14 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder {
         sourceTextView.setText("Sourced from : "+recipe.getSource());
         yieldTextView.setText("Feeds " + (recipe.getYield()) +" persons");
 
+    }
+    @Override
+    public void onItemSelected() {
+        Log.d("Animation","onItemSelected");
+    }
+    @Override
+    public void onItemClear() {
+        Log.d("Animamti0n ","onItemClear");
     }
 
 //    @Override

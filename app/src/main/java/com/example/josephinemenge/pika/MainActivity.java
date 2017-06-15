@@ -38,10 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ValueEventListener mSearchedRecipeReferenceListener;
 
 
-    @Bind(R.id.FRecipeButton)
-    Button mFRecipeButton;
-    @Bind(R.id.fType)
-    EditText mfType;
+    @Bind(R.id.FRecipeButton) Button mFRecipeButton;
+    @Bind(R.id.fType) EditText mfType;
     @Bind(R.id.health)
     EditText mHealth;
     @Bind(R.id.SavedRecipes) Button mSavedRecipeButton;
@@ -69,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot recipeSnapshot : dataSnapshot.getChildren()) {
                     String recipe = recipeSnapshot.getValue().toString();
-                    Log.d("Foodtype update","foodType"+ recipe);
                 }
             }
 
@@ -89,13 +86,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                addToSharedPreferences(foodType);
 //            }
             String Health = mHealth.getText().toString();
-            Toast.makeText(MainActivity.this, "Finding Recipe", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
             intent.putExtra("foodType", foodType);
             intent.putExtra("Health", Health);
             saveRecipeToFireBase(foodType);
             saveHealthToFireBase(health);
-            startActivity(intent);
+            if (foodType.equals("")) {
+                mfType.setError("Please enter a food type :/");
+                return;
+            } else {
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Finding Recipe", Toast.LENGTH_LONG).show();
+            }
         }
         if (v == mSavedRecipeButton ) {
             Intent intent = new Intent(MainActivity.this, SavedRecipeListActivity.class);
