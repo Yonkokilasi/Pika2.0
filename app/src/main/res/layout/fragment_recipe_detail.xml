@@ -76,8 +76,8 @@
                <Button
                    android:layout_width="100dp"
                    android:layout_height="50dp"
-                   android:background="@color/green"
                    android:id="@+id/saveRecipeButton"
+                   android:background="#F0B67F"
                    android:padding="0dp"
                    android:text="Save this recipe"
                    android:textColor="@color/white"
