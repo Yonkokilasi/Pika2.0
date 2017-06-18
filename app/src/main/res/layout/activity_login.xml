@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.josephinemenge.pika.ui.LoginActivity"
-    android:background="@color/greenDark">
+    android:background="@drawable/food_icons">
 
 
     <LinearLayout
@@ -21,11 +21,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/emailEditText"
             android:hint="Email"
+            android:textColorHint="@color/black"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="15dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginTop="150dp"
             />
@@ -36,14 +37,15 @@
             android:inputType="textPassword"
             android:nextFocusDown="@id/passwordEditText"
             android:textSize="20sp"
+            android:textColorHint="@color/black"
             android:padding="10dp"
             android:id="@+id/passwordEditText"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/passwordLoginButton"
-            android:text="LOGIN"
+            android:text="cook"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:padding="10dp"
@@ -53,8 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
             android:text="Don't have an account? Sign up here!"
             android:id="@+id/registerTextView"
             android:layout_gravity="center_horizontal"
@@ -65,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         android:text="PIKA "
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
@@ -75,8 +77,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:layout_marginTop="150dp"
-            android:textColor="@color/white"
+            android:layout_marginTop="170dp"
+            android:textColor="@color/black"
             android:text="Log in to your account"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"

@@ -16,12 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
+            android:screenOrientation="portrait"
             android:name=".MainActivity"
           android:theme="@style/AppTheme">
 
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.RecipeListActivity"
             android:theme="@style/AppTheme">
 
@@ -41,6 +43,7 @@
 
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.SavedRecipeListActivity"
             android:theme="@style/AppTheme">
         <meta-data
@@ -49,15 +52,21 @@
         </activity>
 
 
-        <activity android:name=".ui.CreateAccountActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.CreateAccountActivity"
             android:theme="@style/NoActionBar"/>
 
-        <activity android:name=".ui.LoginActivity"
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ui.LoginActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action
+                    android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
