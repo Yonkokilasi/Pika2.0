@@ -18,6 +18,7 @@ public class Recipe {
        String imageUrl;
     private String pushId;
     String index;
+
     public Recipe(String name, String website,String source, int yield,List<String>ingredientLines,String imageUrl) {
         this.name = name;
         this.imageUrl = imageUrl;

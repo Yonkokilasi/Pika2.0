@@ -52,14 +52,15 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
     }
     @Override
     public void onItemSelected() {
-        itemView.animate().alpha(0.2f).scaleX(0.8f).scaleY(0.8f).setDuration(300);
+        itemView.animate().alpha(0.2f).scaleX(0.8f).scaleY(0.8f).setDuration(700);
     }
     @Override
     public void onItemClear() {
         itemView.animate()
                 .alpha(1f)
                 .scaleX(1f)
-                .scaleY(1f);
+                .scaleY(1f)
+        .setDuration(1000);
     }
 
 //    @Override

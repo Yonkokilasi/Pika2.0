@@ -24,7 +24,7 @@
             android:paddingBottom="20dp"
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
-            android:paddingTop="20dp">
+            android:paddingTop="0dp">
 
             <TextView
                 android:id="@+id/recipeNameTextView"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="Brunch"
                 android:textStyle="italic" />
 

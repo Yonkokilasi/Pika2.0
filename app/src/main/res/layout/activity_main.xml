@@ -21,17 +21,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:text="Begin your recipe Search"
+            android:layout_marginTop="50dp"
+            android:text="Begin your recipe search"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:textStyle="normal"/>
+            android:textColor="#0B0A07"
+            android:textSize="28sp"
+            android:textStyle="italic"/>
 
         <EditText
             android:id="@+id/fType"
             android:layout_width="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:hint="Enter a Food type e.g chicken"
@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/health"
             android:layout_width="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="33dp"
             android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:hint="Health Label e.g gluten-free"

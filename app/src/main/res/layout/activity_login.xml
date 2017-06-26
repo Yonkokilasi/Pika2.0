@@ -49,7 +49,7 @@
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:padding="10dp"
-            android:background="@color/black"
+            android:background="#F0B67F"
             android:textSize="25sp"/>
         <TextView
             android:layout_width="wrap_content"

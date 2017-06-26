@@ -55,6 +55,7 @@ public class RecipeListActivity extends AppCompatActivity {
         if (mRecentSearch != null) {
             getRecipes(mRecentSearch,health);
         }
+
     }
 
     private void getRecipes(final String foodType, String health) {
