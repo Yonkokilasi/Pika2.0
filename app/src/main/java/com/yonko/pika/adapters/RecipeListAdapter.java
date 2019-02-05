@@ -9,18 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.squareup.picasso.Picasso;
 import com.yonko.pika.R;
 import com.yonko.pika.Recipe;
 import com.yonko.pika.ui.RecipeDetailActivity;
-import com.squareup.picasso.Picasso;
-
 
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -28,25 +26,25 @@ import butterknife.ButterKnife;
  */
 
 public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder> {
-private ArrayList<Recipe>mRecipes = new ArrayList<>();
+    private ArrayList<Recipe> mRecipes = new ArrayList<>();
     private Context mContext;
 
 
-    public RecipeListAdapter(Context context,ArrayList<Recipe> recipes) {
+    public RecipeListAdapter(Context context, ArrayList<Recipe> recipes) {
         mContext = context;
         mRecipes = recipes;
     }
 
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item, parent, false);
         RecipeViewHolder viewHolder = new RecipeViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(RecipeViewHolder holder, int position) {
-        holder.bindRecipe(mRecipes.get(position));
+        holder.BindViewRecipe(mRecipes.get(position));
     }
 
     @Override
@@ -55,24 +53,29 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
     }
 
     public class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-       @Bind(R.id.recipeImageView) ImageView mImageView;
-        @Bind(R.id.recipeNameTextView) TextView mNameTextView;
-        @Bind(R.id.recipeSource)TextView mRecipeSourceView;
-        @Bind(R.id.yieldTextView) TextView mYieldTextView;
+        @BindView(R.id.recipeImageView)
+        ImageView mImageView;
+        @BindView(R.id.recipeNameTextView)
+        TextView mNameTextView;
+        @BindView(R.id.recipeSource)
+        TextView mRecipeSourceView;
+        @BindView(R.id.yieldTextView)
+        TextView mYieldTextView;
 
 
-        private  Context mContext;
+        private Context mContext;
 
-        public RecipeViewHolder(View itemView) {
+        RecipeViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
         }
-        public void bindRecipe(Recipe recipe) {
+
+        void BindViewRecipe(Recipe recipe) {
             Picasso.with(mContext).load(recipe.getImageUrl()).into(mImageView);
             mNameTextView.setText(recipe.getLabel());
-            mYieldTextView.setText("Feeds: " + recipe.getYield() +" people");
+            mYieldTextView.setText("Feeds: " + recipe.getYield() + " people");
             mRecipeSourceView.setText(recipe.getSource());
 
         }
@@ -81,7 +84,7 @@ private ArrayList<Recipe>mRecipes = new ArrayList<>();
         public void onClick(View v) {
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, RecipeDetailActivity.class);
-            intent.putExtra("position",itemPosition);
+            intent.putExtra("position", itemPosition);
             intent.putExtra("recipes", Parcels.wrap(mRecipes));
             mContext.startActivity(intent);
         }

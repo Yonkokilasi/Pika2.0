@@ -2,14 +2,13 @@ package com.yonko.pika.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
-
 
 import com.yonko.pika.Constants;
 import com.yonko.pika.R;
@@ -20,14 +19,14 @@ import com.yonko.pika.service.EdmamService;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
 public class RecipeListActivity extends AppCompatActivity {
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     private RecipeListAdapter mAdapter;
     public static final String TAG = RecipeListActivity.class.getSimpleName();
@@ -44,11 +43,11 @@ public class RecipeListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String foodType = intent.getStringExtra("foodType");
         String health = intent.getStringExtra("health");
-        getRecipes(foodType,health);
+        getRecipes(foodType, health);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE,null);
+        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_TYPE, null);
         if (mRecentSearch != null) {
-            getRecipes(mRecentSearch,health);
+            getRecipes(mRecentSearch, health);
         }
 
     }
@@ -70,13 +69,13 @@ public class RecipeListActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         if (mRecipes.isEmpty()) {
-                            Toast.makeText(RecipeListActivity.this,"No results found for "+ foodType +" try another food type",Toast.LENGTH_LONG).show();
+                            Toast.makeText(RecipeListActivity.this, "No results found for " + foodType + " try another food type", Toast.LENGTH_LONG).show();
                         } else {
-                        mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
-                        mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RecipeListActivity.this);
-                        mRecyclerView.setLayoutManager(layoutManager);
-                        mRecyclerView.setHasFixedSize(true);
+                            mAdapter = new RecipeListAdapter(getApplicationContext(), mRecipes);
+                            mRecyclerView.setAdapter(mAdapter);
+                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(RecipeListActivity.this);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setHasFixedSize(true);
                         }
                     }
                 });
@@ -84,8 +83,9 @@ public class RecipeListActivity extends AppCompatActivity {
             }
         });
     }
-    private void  addToSharedPreferences(String foodType) {
-        mEditor.putString(Constants.PREFERENCES_FOOD_TYPE,foodType).apply();
+
+    private void addToSharedPreferences(String foodType) {
+        mEditor.putString(Constants.PREFERENCES_FOOD_TYPE, foodType).apply();
     }
 
 }

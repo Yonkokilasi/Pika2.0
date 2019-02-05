@@ -23,36 +23,31 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-//    private SharedPreferences mSharedPreferences;
-//    private SharedPreferences.Editor mEditor;
+
     private DatabaseReference mSearchedRecipeReference;
     private DatabaseReference mSearchedHealthReference;
     private ValueEventListener mSearchedRecipeReferenceListener;
 
-
-    @Bind(R.id.FRecipeButton) Button mFRecipeButton;
-    @Bind(R.id.fType) EditText mfType;
-    @Bind(R.id.health)
+    @BindView(R.id.FRecipeButton) Button mFRecipeButton;
+    @BindView(R.id.fType) EditText mfType;
+    @BindView(R.id.health)
     EditText mHealth;
-    @Bind(R.id.SavedRecipes) Button mSavedRecipeButton;
+    @BindView(R.id.SavedRecipes) Button mSavedRecipeButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mFRecipeButton.setOnClickListener(this);
         Log.d("Find recipe clicked", "Main activity");
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mEditor = mSharedPreferences.edit();
+
         mSearchedRecipeReference = FirebaseDatabase.getInstance().getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_RECIPE);
         mSearchedHealthReference = FirebaseDatabase.getInstance().getReference()
@@ -78,9 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mFRecipeButton) {
             String health = mHealth.getText().toString();
             String foodType = mfType.getText().toString();
-//            if (!(foodType).equals("")){
-//                addToSharedPreferences(foodType);
-//            }
+
             String Health = mHealth.getText().toString();
             Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
             intent.putExtra("foodType", foodType);
@@ -127,9 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return  super.onOptionsItemSelected(item);
     }
 
-//    private void addToSharedPreferences(String foodType) {
-//        mEditor.putString(Constants.PREFERENCES_FOOD_TYPE,foodType).apply();
-//    }
     private void logout() {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);

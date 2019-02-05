@@ -1,6 +1,7 @@
 package com.yonko.pika.util;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by bubbles on 6/13/17.
