@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.josephinemenge.pika">
+    package="com.yonko.pika">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,57 +16,62 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true">
         <activity
+            android:name="com.yonko.pika.MainActivity"
             android:screenOrientation="portrait"
-            android:name=".MainActivity"
-          android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="pika" />
+            </intent-filter>
         </activity>
 
         <activity
+            android:name="com.yonko.pika.ui.RecipeListActivity"
             android:screenOrientation="portrait"
-            android:name=".ui.RecipeListActivity"
             android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.josephinemenge.pika.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yonko.pika.MainActivity" />
         </activity>
 
 
         <activity
-            android:name=".ui.RecipeDetailActivity"
+            android:name="com.yonko.pika.ui.RecipeDetailActivity"
             android:theme="@style/AppTheme">
-        <meta-data
-            android:value="com.example.josephinemenge.pika.MainActivity"
-            android:name="android.support.PARENT_ACTIVITY"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yonko.pika.MainActivity" />
         </activity>
 
 
         <activity
+            android:name="com.yonko.pika.ui.SavedRecipeListActivity"
             android:screenOrientation="portrait"
-            android:name=".ui.SavedRecipeListActivity"
             android:theme="@style/AppTheme">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.josephinemenge.pika.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.yonko.pika.MainActivity" />
         </activity>
 
 
         <activity
+            android:name="com.yonko.pika.ui.CreateAccountActivity"
             android:screenOrientation="portrait"
-            android:name=".ui.CreateAccountActivity"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar" />
 
         <activity
+            android:name="com.yonko.pika.ui.LoginActivity"
             android:screenOrientation="portrait"
-            android:name=".ui.LoginActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
 
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

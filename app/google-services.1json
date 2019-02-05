@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:907948191776:android:9ccc5ed816f3a07b",
+        "mobilesdk_app_id": "1:907948191776:android:c1b4a3514144bc55",
         "android_client_info": {
-          "package_name": "com.yonko.pika"
+          "package_name": "com.josephinemenge.pika"
         }
       },
       "oauth_client": [
         {
-          "client_id": "907948191776-ja8u83j55jpabtp0l5scr3gej3nh8rfi.apps.googleusercontent.com",
+          "client_id": "907948191776-vj67g1boh5kol3kk583kn0gkr8hjvp0u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.yonko.pika",
-            "certificate_hash": "3cc90b3ace178d0c5ef4c0f7e318e2ee64145b8e"
+            "package_name": "com.josephinemenge.pika",
+            "certificate_hash": "37f85e59ddf0cfc86acdcc4265c2f46bd2d38265"
           }
         },
         {
